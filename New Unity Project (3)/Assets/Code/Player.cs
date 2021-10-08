@@ -50,4 +50,10 @@ public class Player : MonoBehaviour
             newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletForce,0));
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if (other.CompareTag("Gate")){
+            print("Move to next level.");
+        }
+    }
 }
