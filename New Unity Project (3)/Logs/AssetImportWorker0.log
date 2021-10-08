@@ -1454,3 +1454,4 @@ Received Import Request.
 Start importing Assets/Code/LifeSpan.cs using Guid(705900c53be3dca40a60ae6535779b73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcaa8bd8e68312ef27e12e616c89bba8') in 0.007217 seconds 
   Import took 0.011376 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
