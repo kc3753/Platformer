@@ -339,7 +339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052155775}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -850,6 +850,10 @@ PrefabInstance:
       propertyPath: feet
       value: 
       objectReference: {fileID: 840055908}
+    - target: {fileID: 8334813124251537475, guid: 3a64916f936732c4f90f5fd03fa550cc, type: 3}
+      propertyPath: jumpForce
+      value: 250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a64916f936732c4f90f5fd03fa550cc, type: 3}
 --- !u!1 &2186616013335636990 stripped
