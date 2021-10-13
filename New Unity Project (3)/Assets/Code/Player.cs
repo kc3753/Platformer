@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     public Transform feet;
     public bool grounded = false;
+    public int balloonCount = 0;
 
     public GameObject bulletPrefab;
     Rigidbody2D _rigidbody;
@@ -49,11 +52,20 @@ public class Player : MonoBehaviour
             GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletForce,0));
         }
+        if (Input.GetKeyDown(KeyCode.K)){
+            SceneManager.LoadScene("GameStart");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("Gate")){
             print("Move to next level.");
+        }
+    }
+    void OnCollisionEnter2D(Collision2D other){
+        if (other.gameObject.tag == "Balloon"){
+            balloonCount++;
+            Destroy(other.gameObject);
         }
     }
 }
