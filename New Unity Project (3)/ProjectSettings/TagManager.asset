@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Gate
   - Balloon
+  - Spike
   layers:
   - Default
   - TransparentFX

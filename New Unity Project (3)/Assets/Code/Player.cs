@@ -89,6 +89,9 @@ public class Player : MonoBehaviour
             balloonCount++;
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("Spike")){
+            balloonCount--;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other){
