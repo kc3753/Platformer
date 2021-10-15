@@ -457,6 +457,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5587005049133038494, guid: e4f22b0b9d6cb4942990a554a574e86f, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4f22b0b9d6cb4942990a554a574e86f, type: 3}
 --- !u!1001 &846059208
@@ -516,6 +520,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40a6ec5720809b848b4090e36ddb00de, type: 3}
+--- !u!1 &890638432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5939029428862923822, guid: 40a6ec5720809b848b4090e36ddb00de, type: 3}
+  m_PrefabInstance: {fileID: 481086603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &890638436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890638432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e19e00261cb0b4385faf4a281ffdaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077802494
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +548,7 @@ GameObject:
   - component: {fileID: 1077802497}
   - component: {fileID: 1077802496}
   - component: {fileID: 1077802495}
+  - component: {fileID: 1077802498}
   m_Layer: 6
   m_Name: platform (1)
   m_TagString: Untagged
@@ -625,6 +647,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1077802498
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077802494}
+  m_BodyType: 0
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1134737690
 GameObject:
   m_ObjectHideFlags: 3
