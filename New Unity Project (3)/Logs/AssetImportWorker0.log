@@ -1112,3 +1112,27 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 48110.709542 seconds.
+  path: Assets/Scenes/Level 2.unity
+  artifactKey: Guid(e481c245721a1e3449add42e139cece1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level 2.unity using Guid(e481c245721a1e3449add42e139cece1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '511ab3fa1cb35e23b7ff6bb88c857a84') in 0.048590 seconds 
+  Import took 0.079136 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.621569 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eddffb54e0d5a47906bfedfe2df43c00') in 0.021027 seconds 
+  Import took 0.025792 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.177485 seconds.
+  path: Assets/Scenes/HardLevel5.unity
+  artifactKey: Guid(75a63b2053872e94c9f69dd7acb140a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/HardLevel5.unity using Guid(75a63b2053872e94c9f69dd7acb140a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7699b0023aa42b46b5774d082fbd21d2') in 0.020692 seconds 
+  Import took 0.024721 seconds .
+
