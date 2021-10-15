@@ -18,16 +18,22 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     Rigidbody2D _rigidbody;
 
+    //animation
+    Animator _animator;
+
     float xSpeed = 0;
     int jumps;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         xSpeed = Input.GetAxis("Horizontal") * speed;
+        //animation
+        _animator.SetFloat("Speed", Mathf.Abs(xSpeed));
         _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
 
         if((xSpeed < 0 && transform.localScale.x > 0) || (xSpeed > 0 && transform.localScale.x < 0))
