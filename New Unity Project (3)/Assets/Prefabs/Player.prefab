@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1652016018}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +138,7 @@ MonoBehaviour:
   feet: {fileID: 5406910429946814775}
   grounded: 0
   balloonCount: 0
+  manditem: 0
   bulletPrefab: {fileID: 0}
 --- !u!50 &6147800306455064915
 Rigidbody2D:
@@ -173,7 +174,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.12484279, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -184,7 +185,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.4995015, y: 1.882353}
   m_EdgeRadius: 0
 --- !u!114 &6147800306455066284
 MonoBehaviour:
@@ -206,6 +207,7 @@ MonoBehaviour:
   feet: {fileID: 5406910429946814775}
   grounded: 0
   balloonCount: 0
+  manditem: 0
   bulletPrefab: {fileID: 0}
 --- !u!95 &1652016018
 Animator:

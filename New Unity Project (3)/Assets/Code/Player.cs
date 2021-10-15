@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Transform feet;
     public bool grounded = false;
     public int balloonCount = 0;
+    public bool manditem = false;
 
     public GameObject bulletPrefab;
     Rigidbody2D _rigidbody;
@@ -69,6 +70,11 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    bool checkMand(){
+        return manditem;
+    }
+
 /*
     void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("Gate")){
@@ -79,6 +85,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Balloon")){
+            manditem = true;
             balloonCount++;
             Destroy(other.gameObject);
         }
