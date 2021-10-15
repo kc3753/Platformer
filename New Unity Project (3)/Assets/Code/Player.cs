@@ -61,9 +61,7 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Gate")){
             print("Move to next level.");
         }
-    }
-    void OnCollisionEnter2D(Collision2D other){
-        if (other.gameObject.tag == "Balloon"){
+        if (other.CompareTag("Balloon")){
             balloonCount++;
             Destroy(other.gameObject);
         }
