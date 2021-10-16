@@ -7,6 +7,7 @@ TagManager:
   - Gate
   - Balloon
   - Spike
+  - balloon
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3219628399
+    locked: 0
+  - name: Platform
+    uniqueID: 3862919589
     locked: 0
