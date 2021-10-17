@@ -87,7 +87,9 @@ public class Player : MonoBehaviour
         }
         
         if (other.CompareTag("Spike")){
-            balloonCount--;
+            if(balloonCount > 0){
+                balloonCount--;
+            }
         }
         print(balloonCount);
     }
