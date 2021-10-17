@@ -8,6 +8,7 @@ TagManager:
   - Balloon
   - Spike
   - balloon
+  - mandatory
   layers:
   - Default
   - TransparentFX

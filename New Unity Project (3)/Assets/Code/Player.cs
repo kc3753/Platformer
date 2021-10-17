@@ -13,8 +13,9 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     public Transform feet;
     public bool grounded = false;
-    public int balloonCount = 0;
+    public static int balloonCount = 0;
     public bool manditem = false;
+    public Text balloons;
 
     public GameObject bulletPrefab;
     Rigidbody2D _rigidbody;
@@ -41,6 +42,8 @@ public class Player : MonoBehaviour
         {
             transform.localScale *= new Vector2(-1,1);
         }
+
+        balloons.text = balloonCount.ToString();
     }
     void Update()
     {
@@ -61,7 +64,7 @@ public class Player : MonoBehaviour
             newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletForce,0));
         }
         */
-        if (Input.GetKeyDown(KeyCode.K)){
+        if (Input.GetKeyDown(KeyCode.Escape)){
             SceneManager.LoadScene("GameStart");
         }
         if(NextLevel.levelToLoad == 2){
@@ -85,19 +88,23 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Balloon")){
-            manditem = true;
-            balloonCount++;
+            balloonCount = balloonCount + 1;
             Destroy(other.gameObject);
         }
         if (other.CompareTag("Spike")){
             balloonCount--;
         }
+        if (other.CompareTag("mandatory")){
+            manditem = true;
+            Destroy(other.gameObject);
+        }
+        print(balloonCount);
     }
 
-    void OnCollisionEnter2D(Collision2D other){
+    /**void OnCollisionEnter2D(Collision2D other){
         if (other.gameObject.tag == "Balloon"){
             balloonCount++;
             Destroy(other.gameObject);
         }
-    }
+    }**/
 }
