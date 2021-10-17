@@ -78,33 +78,26 @@ public class Player : MonoBehaviour
         return manditem;
     }
 
-/*
-    void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("Gate")){
-            print("Move to next level.");
-        }
-    }
-    */
-
     void OnTriggerEnter2D(Collider2D other) {
+        print(other);
         if (other.CompareTag("Balloon")){
-            balloonCount = balloonCount + 1;
+            other.gameObject.SetActive(false);
             Destroy(other.gameObject);
+            balloonCount = balloonCount + 1;
         }
+        
         if (other.CompareTag("Spike")){
             balloonCount--;
         }
+        print(balloonCount);
+    }
+
+    void OnTriggerExit2D(Collider2D other){
+
         if (other.CompareTag("mandatory")){
             manditem = true;
             Destroy(other.gameObject);
         }
         print(balloonCount);
     }
-
-    /**void OnCollisionEnter2D(Collision2D other){
-        if (other.gameObject.tag == "Balloon"){
-            balloonCount++;
-            Destroy(other.gameObject);
-        }
-    }**/
 }

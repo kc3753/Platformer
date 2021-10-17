@@ -3285,7 +3285,8 @@ PrefabInstance:
       propertyPath: balloons
       value: 
       objectReference: {fileID: 1625433427}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2808675713157981933, guid: e4f22b0b9d6cb4942990a554a574e86f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e4f22b0b9d6cb4942990a554a574e86f, type: 3}
 --- !u!1001 &1704213480
 PrefabInstance:
@@ -3829,11 +3830,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2378329109383625088, guid: 62d344ddbd587484bb8ee0324e59bd1f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.13
+      value: -7.53
       objectReference: {fileID: 0}
     - target: {fileID: 2378329109383625088, guid: 62d344ddbd587484bb8ee0324e59bd1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.68
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 2378329109383625088, guid: 62d344ddbd587484bb8ee0324e59bd1f, type: 3}
       propertyPath: m_LocalPosition.z
