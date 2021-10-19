@@ -16,9 +16,10 @@ public class StartGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return)){
+        if (Input.GetKeyDown("k")){
             print("Pressed");
             SceneManager.LoadScene("SampleScene");
+            NextLevel.levelToLoad = 1;
         }
     }
 }

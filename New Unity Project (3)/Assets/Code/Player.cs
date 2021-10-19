@@ -64,9 +64,11 @@ public class Player : MonoBehaviour
             newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletForce,0));
         }
         */
+        /*
         if (Input.GetKeyDown(KeyCode.Escape)){
             SceneManager.LoadScene("GameStart");
         }
+        */
         if(NextLevel.levelToLoad == 2){
             if(feet.position.y <= -10){
                 SceneManager.LoadScene("Level 2");
