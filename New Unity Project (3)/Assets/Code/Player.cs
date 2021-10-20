@@ -7,17 +7,14 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public int speed = 4;
-    public static int jumpForce = 500;
-    public static int numjumps = 1;
     public int bulletForce = 800;
     public LayerMask groundLayer;
     public Transform feet;
     public bool grounded = false;
-    public static int balloonCount = 0;
     public bool manditem = false;
     public Text balloons;
 
-    public GameObject bulletPrefab;
+    // public GameObject bulletPrefab;
     Rigidbody2D _rigidbody;
 
     //animation
@@ -38,23 +35,22 @@ public class Player : MonoBehaviour
         _animator.SetFloat("Speed", Mathf.Abs(xSpeed));
         _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
 
-        if((xSpeed < 0 && transform.localScale.x > 0) || (xSpeed > 0 && transform.localScale.x < 0))
+        if ((xSpeed < 0 && transform.localScale.x > 0) || (xSpeed > 0 && transform.localScale.x < 0))
         {
-            transform.localScale *= new Vector2(-1,1);
+            transform.localScale *= new Vector2(-1, 1);
         }
-
-        balloons.text = balloonCount.ToString();
     }
     void Update()
     {
         grounded = Physics2D.OverlapCircle(feet.position, .3f, groundLayer);
-        if(grounded){
-            jumps = numjumps;
+        if (grounded)
+        {
+            jumps = PublicVars.numJumps;
         }
-        if(Input.GetButtonDown("Jump")&& (jumps > 0 || grounded))
+        if (Input.GetButtonDown("Jump") && (jumps > 0 || grounded))
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
-            _rigidbody.AddForce(new Vector2(0,jumpForce));
+            _rigidbody.AddForce(new Vector2(0, PublicVars.jumpForce));
             jumps--;
         }
         /*
@@ -69,39 +65,42 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("GameStart");
         }
         */
-        if(NextLevel.levelToLoad == 2){
-            if(feet.position.y <= -10){
-                SceneManager.LoadScene("Level 2");
+        if (NextLevel.levelToLoad == 2)
+        {
+            if (feet.position.y <= -10)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
 
-    bool checkMand(){
+    bool checkMand()
+    {
         return manditem;
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerEnter2D(Collider2D other)
+    {
         print(other);
-        if (other.CompareTag("Balloon")){
-            other.gameObject.SetActive(false);
+        if (other.CompareTag("Balloon"))
+        {
+            PublicVars.balloonCount++;
             Destroy(other.gameObject);
-            balloonCount = balloonCount + 1;
         }
-        
-        if (other.CompareTag("Spike")){
-            if(balloonCount > 0){
-                balloonCount--;
+
+        else if (other.CompareTag("Spike"))
+        {
+            if (PublicVars.balloonCount > 0)
+            {
+                PublicVars.balloonCount--;
             }
         }
-        print(balloonCount);
-    }
-
-    void OnTriggerExit2D(Collider2D other){
-
-        if (other.CompareTag("mandatory")){
+        else if (other.CompareTag("Mandatory"))
+        {
             manditem = true;
             Destroy(other.gameObject);
         }
-        print(balloonCount);
+        print(PublicVars.balloonCount);
+        balloons.text = PublicVars.balloonCount.ToString();
     }
 }

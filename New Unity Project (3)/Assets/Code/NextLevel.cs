@@ -9,41 +9,39 @@ public class NextLevel : MonoBehaviour
 {
     public Text notCollected;
     public static int levelToLoad = 1;
-    
-    void Start(){
+
+    void Start()
+    {
         InvokeRepeating("cleartext", 0f, 3.5f);
     }
-    private void cleartext(){
-        if(notCollected.text != " "){
+    private void cleartext()
+    {
+        if (notCollected.text != " ")
+        {
             notCollected.text = " ";
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player")){
-            if(other.gameObject.GetComponent<Player>().manditem == true){
+        if (other.CompareTag("Player"))
+        {
+            if (other.gameObject.GetComponent<Player>().manditem == true)
+            {
                 print("yay");
             }
-            else{
+            else
+            {
                 notCollected.text = "Hmm... I still need my shoes! Where are they...";
             }
-            levelToLoad ++;
+            levelToLoad++;
             print(levelToLoad);
-            if(levelToLoad == 2){
-                SceneManager.LoadScene("Level 2");
-                Player.jumpForce = 400;
-                Player.numjumps = 0;
+            if (levelToLoad == 2)
+            {
+                PublicVars.jumpForce = 400;
+                PublicVars.numJumps = 0;
             }
-            if(levelToLoad == 3){
-                SceneManager.LoadScene("Level 3");
-            }
-            if(levelToLoad == 4){
-                SceneManager.LoadScene("Level 4");
-            }
-            if(levelToLoad == 5){
-                SceneManager.LoadScene("Level 5");
-            }
+            SceneManager.LoadScene("Level " + levelToLoad.ToString());
         }
     }
 }
