@@ -9,6 +9,6 @@ public class LifeSpan : MonoBehaviour
     public int lifeSeconds = 2;
     void Start()
     {
-        Destroy(this, lifeSeconds);
+        Destroy(gameObject, lifeSeconds);
     }
 }

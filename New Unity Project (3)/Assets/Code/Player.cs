@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public int speed = 4;
-    public int bulletForce = 800;
     public LayerMask groundLayer;
     public Transform feet;
     public bool grounded = false;
@@ -21,7 +20,7 @@ public class Player : MonoBehaviour
     Animator _animator;
 
     float xSpeed = 0;
-    int jumps;
+    int jumps = 0;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
