@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
                 PublicVars.balloonCount--;
             }
         }
-        else if (other.CompareTag("Mandatory"))
+        else if (other.CompareTag("mandatory"))
         {
             manditem = true;
             Destroy(other.gameObject);
