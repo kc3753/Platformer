@@ -47,7 +47,7 @@ MonoBehaviour:
   platform: {fileID: 6522579805333081984}
   currTime: 0
   enable: 1
-  timeToDisappear: 0
+  timeToDisappear: 5
 --- !u!1001 &4720529210503080483
 PrefabInstance:
   m_ObjectHideFlags: 0
