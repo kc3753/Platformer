@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class NextLevel : MonoBehaviour
 {
     public Text notCollected;
-    public static int levelToLoad = 1;
 
     void Start()
     {
@@ -34,14 +33,14 @@ public class NextLevel : MonoBehaviour
             {
                 notCollected.text = "Hmm... I still need my shoes! Where are they...";
             }
-            levelToLoad++;
-            print(levelToLoad);
-            if (levelToLoad == 2)
+            PublicVars.levelToLoad++;
+            print(PublicVars.levelToLoad);
+            if (PublicVars.levelToLoad == 2)
             {
                 PublicVars.jumpForce = 400;
                 PublicVars.numJumps = 0;
             }
-            SceneManager.LoadScene("Level " + levelToLoad.ToString());
+            SceneManager.LoadScene("Level " + PublicVars.levelToLoad.ToString());
         }
     }
 }

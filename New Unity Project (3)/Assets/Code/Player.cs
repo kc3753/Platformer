@@ -64,12 +64,10 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("GameStart");
         }
         */
-        if (NextLevel.levelToLoad == 2)
+
+        if (feet.position.y <= -10)
         {
-            if (feet.position.y <= -10)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
