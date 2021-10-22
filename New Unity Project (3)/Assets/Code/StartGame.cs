@@ -16,7 +16,7 @@ public class StartGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("k"))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene("Level 1");
         }

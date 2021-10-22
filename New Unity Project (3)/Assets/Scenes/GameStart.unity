@@ -275,10 +275,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Press ''K'' to start the game.
+  m_Text: 'Press ''Enter'' or ''Return'' to start the game.
 
-    Press ''Esc'' during the game and
-    quit back to this screen to lose all progress.'
+    Press ''Esc'' during
+    the game to pause.'
 --- !u!222 &607413698
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -346,10 +346,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 46
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 0
     m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 0
