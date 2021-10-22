@@ -39,7 +39,9 @@ public class NextLevel : MonoBehaviour
             {
                 SceneManager.LoadScene("GameOverScene");
             }
-            SceneManager.LoadScene("Level " + levelToLoad.ToString());
+            else{
+                SceneManager.LoadScene("Level " + levelToLoad.ToString());
+            }
         }
     }
 
