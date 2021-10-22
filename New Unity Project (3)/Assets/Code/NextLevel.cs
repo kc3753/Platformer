@@ -37,7 +37,12 @@ public class NextLevel : MonoBehaviour
 
             if (levelToLoad > 5)
             {
-                SceneManager.LoadScene("GameOverScene");
+                if(PublicVars.balloonCount > 0){
+                    SceneManager.LoadScene("GameOverScene");
+                }
+                else{
+                    SceneManager.LoadScene("SadGameOver");
+                }
             }
             else{
                 SceneManager.LoadScene("Level " + levelToLoad.ToString());

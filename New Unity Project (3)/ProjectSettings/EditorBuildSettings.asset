@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOverScene.unity
     guid: 933abcbf5b8bd3644b93375c6b02c84c
   - enabled: 1
+    path: Assets/Scenes/SadGameOver.unity
+    guid: 09dca365d3d65254abfdc706a1aecd60
+  - enabled: 1
     path: Assets/Scenes/level 1.unity
     guid: 4b905555f4030474dbffceb21d7bbad4
   - enabled: 0
