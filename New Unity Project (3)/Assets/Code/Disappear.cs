@@ -15,16 +15,19 @@ public class Disappear : MonoBehaviour
     void Update()
     {
         currTime += Time.deltaTime;
-        if(currTime >= timeToDisappear){
-            if(enable){
+        if(enable){
+            if(currTime >= timeToDisappear){
               platform.SetActive(false); 
               enable = false; 
+              currTime = 0;
             }
-            else{
-            platform.SetActive(true);
-            enable = true;
+        }
+        if(!enable){
+            if(currTime >= 1){
+                platform.SetActive(true); 
+                enable = true; 
+                currTime = 0;
             }
-            currTime = 0;
         }
     }
 }
