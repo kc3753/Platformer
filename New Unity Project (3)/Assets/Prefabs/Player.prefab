@@ -184,6 +184,8 @@ MonoBehaviour:
   grounded: 0
   manditem: 0
   balloons: {fileID: 0}
+  currBalloonCount: 0
+  balloonPop: {fileID: 8300000, guid: a32fb9c20e98a2e4da50424b71e3b4f8, type: 3}
 --- !u!95 &1652016018
 Animator:
   serializedVersion: 3

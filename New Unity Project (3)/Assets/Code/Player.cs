@@ -16,12 +16,16 @@ public class Player : MonoBehaviour
     Rigidbody2D _rigidbody;
     //animation
     Animator _animator;
+    //sound
+    AudioSource _audioSource;
+    public AudioClip balloonPop;
     float xSpeed = 0;
     int jumps = 0;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         // In the beginning of each level show the current ballon count
         currBalloonCount = PublicVars.balloonCount;
         balloons.text = currBalloonCount.ToString();
@@ -85,6 +89,7 @@ public class Player : MonoBehaviour
         {
             if (currBalloonCount > 0)
             {
+                _audioSource.PlayOneShot(balloonPop);
                 currBalloonCount--;
             }
         }
