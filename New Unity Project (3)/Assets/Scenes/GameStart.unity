@@ -277,8 +277,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Press ''K'' to start the game.
 
-    Press ''K'' during the game to quit
-    back to the screen and lose all progress.'
+    Press ''Esc'' during the game and
+    quit back to this screen to lose all progress.'
 --- !u!222 &607413698
 CanvasRenderer:
   m_ObjectHideFlags: 0
