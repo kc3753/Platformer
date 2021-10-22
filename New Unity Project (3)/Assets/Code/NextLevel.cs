@@ -13,15 +13,15 @@ public class NextLevel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (!other.gameObject.GetComponent<Player>().manditem)
+            int levelToLoad = SceneManager.GetActiveScene().name[6] - '0' + 1;
+
+            if (!other.gameObject.GetComponent<Player>().manditem && levelToLoad == 3)
             {
                 notCollected.text = "Hmm... I still need my shoes! Where are they...";
                 StartCoroutine(Cleartext());
                 return;
             }
-            PublicVars.levelToLoad++;
-            print(PublicVars.levelToLoad);
-            if (PublicVars.levelToLoad == 2)
+            if (levelToLoad == 2)
             {
                 PublicVars.jumpForce = 400;
                 PublicVars.numJumps = 0;
@@ -31,8 +31,15 @@ public class NextLevel : MonoBehaviour
                 PublicVars.jumpForce = 500;
                 PublicVars.numJumps = 1;
             }
+            // add the collected ballon in this level to the total ballon count 
+            // only if the player passes this level
             PublicVars.balloonCount = other.gameObject.GetComponent<Player>().currBalloonCount;
-            SceneManager.LoadScene("Level " + PublicVars.levelToLoad.ToString());
+
+            if (levelToLoad > 5)
+            {
+                SceneManager.LoadScene("GameOverScene");
+            }
+            SceneManager.LoadScene("Level " + levelToLoad.ToString());
         }
     }
 

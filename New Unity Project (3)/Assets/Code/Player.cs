@@ -12,21 +12,19 @@ public class Player : MonoBehaviour
     public bool grounded = false;
     public bool manditem = false;
     public Text balloons;
-
     public int currBalloonCount;
-
     Rigidbody2D _rigidbody;
-
     //animation
     Animator _animator;
-
     float xSpeed = 0;
     int jumps = 0;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        // In the beginning of each level show the current ballon count
         currBalloonCount = PublicVars.balloonCount;
+        balloons.text = currBalloonCount.ToString();
     }
 
     void FixedUpdate()
@@ -43,6 +41,7 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        if (PublicVars.paused) return;
         grounded = Physics2D.OverlapCircle(feet.position, .3f, groundLayer);
         if (grounded)
         {
@@ -69,19 +68,13 @@ public class Player : MonoBehaviour
 
         if (feet.position.y <= -10)
         {
-            print(SceneManager.GetActiveScene().name);
+            manditem = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
-    bool checkMand()
-    {
-        return manditem;
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        print(other);
         if (other.CompareTag("Balloon"))
         {
             currBalloonCount++;

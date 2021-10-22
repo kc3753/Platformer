@@ -18,9 +18,7 @@ public class StartGame : MonoBehaviour
     {
         if (Input.GetKeyDown("k"))
         {
-            print("Pressed");
-            SceneManager.LoadScene("SampleScene");
-            PublicVars.levelToLoad = 1;
+            SceneManager.LoadScene("Level 1");
         }
     }
 }
