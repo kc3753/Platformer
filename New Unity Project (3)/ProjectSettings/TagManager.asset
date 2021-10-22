@@ -7,7 +7,6 @@ TagManager:
   - Gate
   - Balloon
   - Spike
-  - balloon
   - mandatory
   layers:
   - Default

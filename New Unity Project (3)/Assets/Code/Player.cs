@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
     public bool manditem = false;
     public Text balloons;
 
-    // public GameObject bulletPrefab;
+    public int currBalloonCount;
+
     Rigidbody2D _rigidbody;
 
     //animation
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        currBalloonCount = PublicVars.balloonCount;
     }
 
     void FixedUpdate()
@@ -67,6 +69,7 @@ public class Player : MonoBehaviour
 
         if (feet.position.y <= -10)
         {
+            print(SceneManager.GetActiveScene().name);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
@@ -81,15 +84,15 @@ public class Player : MonoBehaviour
         print(other);
         if (other.CompareTag("Balloon"))
         {
-            PublicVars.balloonCount++;
+            currBalloonCount++;
             Destroy(other.gameObject);
         }
 
         else if (other.CompareTag("Spike"))
         {
-            if (PublicVars.balloonCount > 0)
+            if (currBalloonCount > 0)
             {
-                PublicVars.balloonCount--;
+                currBalloonCount--;
             }
         }
         else if (other.CompareTag("mandatory"))
@@ -97,7 +100,6 @@ public class Player : MonoBehaviour
             manditem = true;
             Destroy(other.gameObject);
         }
-        print(PublicVars.balloonCount);
-        balloons.text = PublicVars.balloonCount.ToString();
+        balloons.text = currBalloonCount.ToString();
     }
 }
